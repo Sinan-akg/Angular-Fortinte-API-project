@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+<div class ="shop">
+  <br>
+<h1>Daily shop</h1>
+
+</div>
+<div class ="image">
+<p align ="right"><img src= "https://gamepedia.cursecdn.com/fortnite_gamepedia/f/f3/V-bucks_icon.png" height="90" width="90"></p>
+</div>
+
+
+
+<!-- Affichage des stats avec l'api -->
+
+<h1>Voici tous les objets à l'achat aujourd'hui</h1>
+<h2>Date du dernier renouvellement de la boutique :{{ responseShop.lastUpdate.date }}</h2>
+
+   <ul *ngFor = "let i = index; let title of responseShop.shop">
+    <li>Nom Objet : {{ responseShop.shop[i].displayName }}</li>
+    <li>Description : {{ responseShop.shop[i].displayDescription }}</li>
+    <li>Rareté: {{ responseShop.shop[i].rarity.name }}</li>
+    <li>Prix: {{ responseShop.shop[i].price.finalPrice }} Vbucks </li>
+    <img src="{{ responseShop.shop[i].displayAssets[0].full_background }}" style="width:300px;height:300px;">
+
+
+  <!--
+  <ul>
+        <li >Nom de l'objet</li>
+
+            <li>objet : {{responseShop.shop.display.name}}</li>
+
+          <li>Type</li>
+
+         <li>Type: {{responseShop.shop.displayType}}</li>
+
+        <li>Description</li>
+
+        <li>Description: {{responseShop.shop.displayDescription}}</li>
+
+        <li>image</li>
+
+        <li>image: {{responseShop.displayAsset.full_background}}</li>
+
+        <li>rareté</li>
+
+        <li>Rareté: {{responseShop.rarity.name}}</li>
+
+        <li>Prix</li>
+
+       <li>Prix: {{responseShop.price.finalPrice}}</li>
+
+  </ul>
+
+-->
+
+
+

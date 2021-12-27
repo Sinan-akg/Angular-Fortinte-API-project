@@ -1,0 +1,61 @@
+
+<div class="bg">
+<p>statistics works!</p>
+
+<!-- prerequis pour loading button -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<div class ="rectangle">
+<h1> Search for player's statistics : </h1>
+<!-- loading button -->
+  <div class="spinner-border text-light"></div>
+
+<form id= "searchbox" method= "get" action= "/search" autocomplete= "off">
+  <input name= "search" [(ngModel)] = "name" type= "text" size= "15" placeholder= "Entrez le nom du joueur… "/>
+  <input id= "button-submit" type= "submit" (click)="sendData()" (click)="sendApi()" value="" />
+</form>
+<p style="font-style: italic;">Try "Groanfiel" or "Exode_furaxx" for example and click the button twice</p>
+</div>
+
+<br>
+
+
+
+<h2>La variable est {{name}}</h2>
+
+  <!-- Affichage des stats avec l'api -->
+  <h3>Nom du joueur: {{responseStats.name}}</h3>
+  <p>level du joueur: {{responseStats.account.level}}</p>
+
+  <ul>
+        <li>Matchs solo</li>
+          <ul>
+            <li>Eliminations: {{responseStats.global_stats.solo.kills}}</li>
+            <li>Wins: {{ responseStats.global_stats.solo.placetop1 }}</li>
+            <li>Match played: {{ responseStats.global_stats.solo.matchesplayed }}</li>
+            <li>minutes played: {{ responseStats.global_stats.solo.minutesplayed }}</li>
+          </ul>
+        <li>Matchs duo</li>
+          <ul>
+            <li>Eliminations: {{responseStats.global_stats.duo.kills}}</li>
+            <li>Wins: {{ responseStats.global_stats.duo.placetop1 }}</li>
+            <li>Match played: {{ responseStats.global_stats.duo.matchesplayed }}</li>
+            <li>Minutes played: {{ responseStats.global_stats.duo.minutesplayed }}</li>
+          </ul>
+        <li>Matchs squad</li>
+        <ul>
+          <li>Eliminations: {{responseStats.global_stats.squad.kills}}</li>
+          <li>Wins: {{ responseStats.global_stats.squad.placetop1 }}</li>
+          <li>Match played: {{ responseStats.global_stats.squad.matchesplayed }}</li>
+          <li>Minutes played: {{ responseStats.global_stats.squad.minutesplayed }}</li>
+        </ul>
+
+  </ul>
+
+
+
+

@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div class ="fish">
+
+<h1>Voici tous les poissons du jeux </h1>
+
+    <p style="font-style: italic;">Vous cherchez l'utilité (il n'y en a pas) </p>
+  </div>
+  <br>
+  <br>
+      <!-- <ul *ngFor = "let shop of responseItemShop.shop"> -->
+       <ul *ngFor = "let i = index; let title of responseFish.fish">
+        <li>Nom du poisson : {{ responseFish.fish[i].name }} </li>
+        <li>Description : {{ responseFish.fish[i].description }} </li>
+        <img src="{{ responseFish.fish[i].image }}" style="width:200px;height:200px;">
+</ul>

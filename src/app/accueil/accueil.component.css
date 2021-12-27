@@ -1,0 +1,50 @@
+/*style images logo fortnite stats*/
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+/* style video*/
+
+#background-video {
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  display: flex;
+
+  }
+  #btnVideo{
+
+    color: white;
+
+    font-family: Trebuchet MS;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    }
+
+    #btnVideo{
+    font-size: 1.5rem;
+    background: 0;
+    border: 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    }
+
+
+
