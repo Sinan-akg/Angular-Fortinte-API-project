@@ -1,50 +1,28 @@
-/*style images logo fortnite stats*/
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
+@font-face {
+  font-family: "Burbank Small Black";
+  src: url("../../fonts/BurbankSmall-Black.otf");
 }
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-
-/* style video*/
-
-#background-video {
-  object-fit: cover;
+.bg{
+  /* Fixe l'image en haut à gauche de la page */
   position: fixed;
+  top: 60px;
   left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
+
+  /* Préserve le ratio de l'image */
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url(src/img/background.png);
+  padding-top: 10px;
+  /*Police*/
+  font-family: "Burbank Small Black";
+  color: white;
+}
+/* style video*/
+.video{
+  margin-left: auto;
+  margin-right: auto;
   display: block;
-  display: flex;
+  width: 1050px;
 
-  }
-  #btnVideo{
-
-    color: white;
-
-    font-family: Trebuchet MS;
-
-    font-weight: bold;
-
-    text-align: center;
-
-    }
-
-    #btnVideo{
-    font-size: 1.5rem;
-    background: 0;
-    border: 0;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    }
-
-
-
+}

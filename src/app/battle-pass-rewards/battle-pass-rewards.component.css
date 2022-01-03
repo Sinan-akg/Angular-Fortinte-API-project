@@ -1,11 +1,161 @@
+@font-face {
+  font-family: "Burbank Small Black";
+  src: url("../../fonts/BurbankSmall-Black.otf");
+}
+
+.bg{
+  /* Fixe l'image en haut à gauche de la page */
+  position: absolute;
+  top: 60px;
+  left: 0;
+  /* Préserve le ratio de l'image */
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url(src/img/background.png);
+  /*Police*/
+  font-family: "Burbank Small Black";
+  color: white;
+}
+/*Grille*/
+.grille{
+  max-width: 1300px;
+  width: 80%;
+  height: auto;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
+  grid-gap: 10px;
+}
+
+.grid-item{
+  width: 300px;
+  height: 300px;
+  background: #333;
+}
+/*Fin Grille*/
+
+/*Div infomation item sur la grille*/
+.info{
+  background-color: gray;
+  text-align: center;
+  width: 920px;
+  height: 500px;
+  position: fixed;
+  left: 19.6%;
+  top:170px;
+}
+.croix{
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+.imageInfo{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.nomInfo{
+  position: absolute;
+  left: 220px;
+  top: 20px;
+}
+
+.typeInfo{
+  position: absolute;
+  left: 220px;
+  top: 70px;
+}
+
+.descriptionInfo{
+  position: absolute;
+  left: 220px;
+  top: 100px;
+}
+
+.autreImages{
+  position: absolute;
+  left: 10px;
+  top: 210px;
+}
+
+.autreImageInfo{
+  position: absolute;
+  left: 10px;
+  top: 270px;
+}
+
+.autreImageInfo2{
+  position: absolute;
+  left: 230px;
+  top: 270px;
+}
+
+/*Fin Div infomation item sur la grille*/
+.btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+}
+.icone {
+  width: 50px;
+}
+
+.drapFr{
+/* position: absolute; */
+height: 33px;
+width: 50px;
+background-image: url(src/img/france.png);
+}
+
+.drapEn{
+/* position: absolute; */
+height: 33px;
+width: 50px;
+background-image: url(src/img/anglais.png);
+}
+
+.drapAr{
+/* position: absolute; */
+height: 33px;
+width: 50px;
+background-image: url(src/img/arabe.png);
+}
+
+.drapEs{
+/* position: absolute; */
+height: 33px;
+width: 50px;
+background-image: url(src/img/espagne.jpg);
+}
+
+.drapIt{
+/* position: absolute; */
+height: 33px;
+width: 50px;
+background-image: url(src/img/italie.png);
+}
+
+.drapCh{
+/* position: absolute; */
+height: 33px;
+width: 50px;
+background-image: url(src/img/chine.jpg);
+}
+
+.lists {
+  list-style-type:none;
+}
+
+button {
+  margin: 2px;
+}
 .battle-pass {
   text-align: center;
   font-family: verdana;
-  font-size: 200%;
+  font-size: 100%;
   color: goldenrod;
   margin-top: auto;
-}
-.fleche {
-
-  margin-left : 100px;
 }

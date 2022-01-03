@@ -1,17 +1,120 @@
-.shop {
-
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 100%;
-  color: rgb(0, 0, 0);
-  width: 200px;
-  margin-left:40%;
-  text-align: left;
-  float: left;
+@font-face{
+  font-family: "Burbank Big Rg Bk";
+  src: url("../../fonts/BurbankBigRegularBlack.otf") format("truetype");
 }
 
-.image{
-
-  margin-right:40%;
-  text-align:right;
-  float: right;
+/*Grille*/
+.grille{
+  max-width: 1300px;
+  width: 80%;
+  height: auto;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  justify-content: center;
+  grid-gap: 10px;
 }
+.grid-item{
+  width: 300px;
+  height: 300px;
+  background: #333;
+}
+
+/*Div infomation item sur la grille*/
+.info{
+  background-image: url(src/img/epic.png);
+  text-align: center;
+  width: 920px;
+  height: 500px;
+
+  position: fixed;
+  left: 19.6%;
+}
+
+.croix{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.imageInfo{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.nomInfo{
+  position: absolute;
+  left: 220px;
+  top: 10px;
+}
+
+.typeInfo{
+  position: absolute;
+  left: 220px;
+  top: 60px;
+}
+
+.prix{
+  position: absolute;
+  left: 220px;
+  top: 90px;
+}
+
+.descriptionInfo{
+  position: absolute;
+  left: 220px;
+  top: 130px;
+}
+
+.autreImages{
+  position: absolute;
+  left: 10px;
+  top: 210px;
+}
+
+.autreImageInfo{
+  position: absolute;
+  left: 10px;
+  top: 270px;
+}
+
+.autreImageInfo2{
+  position: absolute;
+  left: 230px;
+  top: 270px;
+}
+
+.autreImageInfo3{
+  position: absolute;
+  left: 450px;
+  top: 270px;
+}
+/*Fin Grille*/
+
+/*Fin Div infomation item sur la grille*/
+
+.bg{
+  /* Fixe l'image en haut à gauche de la page */
+  position: absolute;
+  top: 60px;
+  left: 0;
+  /* Préserve le ratio de l'image */
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url(src/img/background.png);
+  font-family: "Burbank Small Black";
+  color: white;
+  font-style: italic;
+}
+
+.btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+}
+.icone {
+  width: 50px;
+}
+

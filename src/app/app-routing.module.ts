@@ -11,6 +11,7 @@ import { FishComponent } from './fish/fish.component';
 import { WeaponsComponent } from './weapons/weapons.component';
 
 const routes: Routes = [
+   { path: '', component: AccueilComponent },
    { path: 'daily-shop', component: dailyshopComponent },
    { path: 'Statistics', component: StatisticsComponent },
    { path: 'BattlePassRewards', component: BattlePassRewardsComponent },
@@ -22,7 +23,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }, )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

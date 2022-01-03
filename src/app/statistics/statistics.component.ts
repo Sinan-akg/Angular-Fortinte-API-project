@@ -13,8 +13,15 @@ export class StatisticsComponent implements OnInit {
   responseUserId: any;
   responseStats: any;
 
-  namePlayer: string ="";
   name: string ="";
+  daysPlayedSoloNumber: number =0;
+  daysPlayedSolo: string="";
+  daysPlayedDuoNumber: number = 0;
+  daysPlayedDuo: string = "";
+  daysPlayedSquadNumber: number = 0;
+  daysPlayedSquad: string = "";
+  allDaysPlayedNumber: number=0;
+  allDaysPlayed: string ="";
   idPlayer: string = "";
 
   constructor(private http: HttpClient, private communicationService: CommunicationService) { }
@@ -39,13 +46,22 @@ export class StatisticsComponent implements OnInit {
       this.responseUserId = response;
       this.idPlayer = this.responseUserId.account_id;
       console.log(this.responseUserId);
-      //await delay(1000);
     })
 
-    // if(this.idPlayer != "")
     this.http.get("https://fortniteapi.io/v1/stats?account=" + this.idPlayer, header)
     .subscribe((response3) => {
       this.responseStats = response3;
+
+      this.daysPlayedSoloNumber = (((Number(this.responseStats.global_stats.solo.minutesplayed))/60)/24);
+      this.daysPlayedSolo = (this.daysPlayedSoloNumber).toFixed(2);
+
+      this.daysPlayedDuoNumber = ((Number(this.responseStats.global_stats.duo.minutesplayed))/60)/24;
+      this.daysPlayedDuo = (this.daysPlayedDuoNumber).toFixed(2);
+
+      this.daysPlayedSquadNumber = ((Number(this.responseStats.global_stats.squad.minutesplayed))/60)/24;
+      this.daysPlayedSquad = (this.daysPlayedSquadNumber).toFixed(2);
+      this.allDaysPlayedNumber = this.daysPlayedSoloNumber + this.daysPlayedDuoNumber + this.daysPlayedSquadNumber
+      this.allDaysPlayed = (this.allDaysPlayedNumber).toFixed(2);
       console.log(this.responseStats);
     })
   }

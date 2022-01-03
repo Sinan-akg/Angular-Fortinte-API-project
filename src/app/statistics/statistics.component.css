@@ -1,16 +1,32 @@
+@font-face {
+  font-family: "Burbank Small Black";
+  src: url("../../fonts/BurbankSmall-Black.otf");
+}
+
 .lists {
   list-style-type:none;
 }
 .bg{
-  background-color:lightgray;
-}
+   /* Fixe l'image en haut à gauche de la page */
+   position: fixed;
+   top: 60px;
+   left: 0;
+   /* Préserve le ratio de l'image */
+   min-width: 100%;
+   min-height: 100%;
+   background-image: url(src/img/background.png);
+   padding-top: 10px;
+   /*Police*/
+   font-family: "Burbank Small Black";
 
+   color: white;
+}
 button {
   margin: 2px;
 }
 
 #searchbox {
-width: 240px;
+width: 1000px;
 }
 #searchbox input {
 outline: none;
@@ -29,8 +45,8 @@ background: url(http://2.bp.blogspot.com/-xpzxYc77ack/VDpdOE5tzMI/AAAAAAAAAeQ/Ty
 border: 2px solid #f2f2f2;
 font: bold 12px Arial,Helvetica,Sans-serif;
 color: #6A6F75;
-width: 160px;
-padding: 14px 17px 12px 30px;
+width: 200px;
+padding: 14px 20px 12px 30px;
 -webkit-border-radius: 5px 0px 0px 5px;
 -moz-border-radius: 5px 0px 0px 5px;
 border-radius: 5px 0px 0px 5px;
@@ -45,6 +61,7 @@ background: #dadada;
 border: 2px solid #f7f7f7;
 width: 200px;
 padding-left: 10px;
+
 }
 
 #button-submit{
@@ -56,18 +73,18 @@ height: 45px;
 }
 .rectangle {
 
-  border-radius: 15px;
+  border-radius: 25px;
   background: #52dafc;
   padding: 10px;
   width: 1000px;
-  height: 190px;
+  height: 160px;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5vh;
+  margin-top: 1vh;
   text-align:center;
 
 }
-
-
-
+.text-size {
+  font-size : 0.82em;
+}

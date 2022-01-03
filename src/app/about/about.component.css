@@ -1,13 +1,11 @@
-
-
-.image1{
-  position : absolute;
-  top: 115px;
-  right: 150px;
-
-  height: 300px;
-  width: 250px;
-  background-image: url(images/clement.jpg);
+@font-face {
+  font-family: "Burbank Small Black";
+  src: url("../../fonts/BurbankSmall-Black.otf");
 }
 
+#bitmap {
+  
+  border: 50px solid;
+  border-image: linear-gradient(rgb(0, 225, 255),rgb(145, 86, 255)) 10;
 
+}

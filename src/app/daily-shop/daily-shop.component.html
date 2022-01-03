@@ -1,58 +1,36 @@
 <app-header></app-header>
 
-<div class ="shop">
-  <br>
-<h1>Daily shop</h1>
+<div class="bg">
 
-</div>
-<div class ="image">
-<p align ="right"><img src= "https://gamepedia.cursecdn.com/fortnite_gamepedia/f/f3/V-bucks_icon.png" height="90" width="90"></p>
-</div>
-
-
+<h1>Item Shop  {{date | date}}</h1>
+<h2>Reset de la boutique dans : <countdown #cd [config]="{leftTime: countDown}" ></countdown> </h2>
 
 <!-- Affichage des stats avec l'api -->
 
-<h1>Voici tous les objets à l'achat aujourd'hui</h1>
-<h2>Date du dernier renouvellement de la boutique :{{ responseShop.lastUpdate.date }}</h2>
+<div class="grille">
+  <div class="grid-item" *ngFor = "let i = index; let title of responseShop.shop"><input type="image" src="{{ responseShop.shop[i].displayAssets[0].full_background }}" style="width:300px;height:300px;" (click)="sendNumber(i)"></div>
 
-   <ul *ngFor = "let i = index; let title of responseShop.shop">
-    <li>Nom Objet : {{ responseShop.shop[i].displayName }}</li>
-    <li>Description : {{ responseShop.shop[i].displayDescription }}</li>
-    <li>Rareté: {{ responseShop.shop[i].rarity.name }}</li>
-    <li>Prix: {{ responseShop.shop[i].price.finalPrice }} Vbucks </li>
-    <img src="{{ responseShop.shop[i].displayAssets[0].full_background }}" style="width:300px;height:300px;">
+  <div class="info" *ngIf="i != -1">
+    <input class="croix" type="image" src="https://img.icons8.com/color/48/000000/delete-sign--v3.png" (click)="retourGrille()"/> <!--ferme le div information-->
+    <img class="imageInfo" src="{{ responseShop.shop[i].granted[0].images.icon }}" style="width:200px;height:200px;">
+    <h1 class="nomInfo">{{ responseShop.shop[i].displayName }}</h1>
+    <h3 class="typeInfo">{{ responseShop.shop[i].rarity.name }} -- {{ responseShop.shop[i].displayType }}</h3>
+    <h3 class="prix"><img style="width:25px" src="https://image.fnbr.co/price/icon_vbucks_50x.png"> {{ responseShop.shop[i].price.finalPrice }} </h3>
+    <p class="descriptionInfo">"{{ responseShop.shop[i].displayDescription }}"</p>
+    <h2 class="autreImages">Images</h2>
+    <img class="autreImageInfo" src="{{ responseShop.shop[i].granted[0].images.featured }}" style="width:200px;height:200px;">
+    <img class="autreImageInfo2" src="{{ responseShop.shop[i].displayAssets[0].background }}" style="width:200px;height:200px;">
+    <img class="autreImageInfo3" src="{{ responseShop.shop[i].displayAssets[1].background }}" style="width:200px;height:200px;">
+  </div>
+
+</div>
+</div>
 
 
-  <!--
-  <ul>
-        <li >Nom de l'objet</li>
 
-            <li>objet : {{responseShop.shop.display.name}}</li>
 
-          <li>Type</li>
-
-         <li>Type: {{responseShop.shop.displayType}}</li>
-
-        <li>Description</li>
-
-        <li>Description: {{responseShop.shop.displayDescription}}</li>
-
-        <li>image</li>
-
-        <li>image: {{responseShop.displayAsset.full_background}}</li>
-
-        <li>rareté</li>
-
-        <li>Rareté: {{responseShop.rarity.name}}</li>
-
-        <li>Prix</li>
-
-       <li>Prix: {{responseShop.price.finalPrice}}</li>
-
-  </ul>
-
--->
-
+<a href="daily-shop" class="btn">
+  <img src="https://presencevertetouraine.fr/wp-content/themes/themePVT/assets/img/fleche_haut_gris.png" alt="" class="icone">
+</a>
 
 
